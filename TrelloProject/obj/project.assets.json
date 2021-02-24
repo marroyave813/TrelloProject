@@ -6645,11 +6645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\TrelloProject\\TrelloProject\\TrelloProject.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\TrelloProject\\TrelloProject\\TrelloProject.csproj",
       "projectName": "TrelloProject",
-      "projectPath": "C:\\Users\\Usuario\\source\\repos\\TrelloProject\\TrelloProject\\TrelloProject.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Documents\\TrelloProject\\TrelloProject\\TrelloProject.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\source\\repos\\TrelloProject\\TrelloProject\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Documents\\TrelloProject\\TrelloProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
