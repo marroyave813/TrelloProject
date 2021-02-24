@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OXXNVUgTFR3zQOfw16CgFErlANiYpb37XYh1eROuwumpD0HWasowMn2Dm/Rb4wnI3FVow6xSqC+f8RhXawAdBA==",
+  "dgSpecHash": "rFAQKlq2kMSrcKmyqwcVFCmgtGJ564F9UCGtNFicq3wdThKLAovHk/p57yyU929MUqhJohDjzDLNZ+0Wn4Plsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\TrelloProject\\TrelloProject\\TrelloProject.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Documents\\TrelloProject\\TrelloProject\\TrelloProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",

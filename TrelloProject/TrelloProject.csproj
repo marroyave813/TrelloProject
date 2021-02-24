@@ -18,9 +18,4 @@
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.7.13" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="BDD\Features\" />
-    <Folder Include="Model\JsonModel\" />
-  </ItemGroup>
-
 </Project>
