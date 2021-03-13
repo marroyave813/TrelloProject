@@ -142,7 +142,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a board from the user", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -162,16 +162,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 12
  testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
+#line 13
  testRunner.When("the user wants to get the owning boards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 14
  testRunner.And("gets one of the boards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
  testRunner.Then("the board selected board is retrieved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -187,7 +187,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("responseId", responseId);
             argumentsOfScenario.Add("errorMessage", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get board with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 16
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -207,13 +207,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 17
+#line 19
  testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 18
+#line 20
  testRunner.When(string.Format("the user wants to get the board {0}", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 21
  testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -230,7 +230,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"unauthorized permission requested\"")]
         public virtual void GetBoardWithInvalidElements_Variant0()
         {
-#line 16
+#line 18
 this.GetBoardWithInvalidElements("\"anonymous\"", "\"60358bb95b8996733ff8a580\"", "401", "\"unauthorized permission requested\"", ((string[])(null)));
 #line hidden
         }
@@ -245,7 +245,7 @@ this.GetBoardWithInvalidElements("\"anonymous\"", "\"60358bb95b8996733ff8a580\""
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"invalid id\"")]
         public virtual void GetBoardWithInvalidElements_Variant1()
         {
-#line 16
+#line 18
 this.GetBoardWithInvalidElements("\"Mauricio\"", "\"1111111\"", "400", "\"invalid id\"", ((string[])(null)));
 #line hidden
         }
@@ -260,7 +260,7 @@ this.GetBoardWithInvalidElements("\"Mauricio\"", "\"1111111\"", "400", "\"invali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
         public virtual void GetBoardWithInvalidElements_Variant2()
         {
-#line 16
+#line 18
 this.GetBoardWithInvalidElements("\"Mauricio\"", "\"60358cc95b8996733ff8a580\"", "404", "\"The requested resource was not found.\"", ((string[])(null)));
 #line hidden
         }
@@ -272,7 +272,7 @@ this.GetBoardWithInvalidElements("\"Mauricio\"", "\"60358cc95b8996733ff8a580\"",
             argumentsOfScenario.Add("username", username);
             argumentsOfScenario.Add("memberType", memberType);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a member", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 27
+#line 30
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -292,14 +292,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 28
+#line 31
 testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 29
+#line 32
 testRunner.When(string.Format("the user wants to add the member {0} to the board \"60358bb95b8996733ff8a580\" with" +
                             " type {1}", username, memberType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 33
 testRunner.Then(string.Format("the member \"{0}\" with type \"{1}\"  is part of the board", username, memberType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -314,7 +314,7 @@ testRunner.Then(string.Format("the member \"{0}\" with type \"{1}\"  is part of 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
         public virtual void AddAMember_Jquser2()
         {
-#line 27
+#line 30
 this.AddAMember("jquser2", "admin", ((string[])(null)));
 #line hidden
         }
@@ -327,7 +327,7 @@ this.AddAMember("jquser2", "admin", ((string[])(null)));
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "normal")]
         public virtual void AddAMember_Omarandresnarvaezortega()
         {
-#line 27
+#line 30
 this.AddAMember("omarandresnarvaezortega", "normal", ((string[])(null)));
 #line hidden
         }
@@ -340,7 +340,7 @@ this.AddAMember("omarandresnarvaezortega", "normal", ((string[])(null)));
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
         public virtual void AddAMember_Silvanaperezrojas()
         {
-#line 27
+#line 30
 this.AddAMember("silvanaperezrojas", "admin", ((string[])(null)));
 #line hidden
         }
@@ -356,7 +356,7 @@ this.AddAMember("silvanaperezrojas", "admin", ((string[])(null)));
             argumentsOfScenario.Add("errorMessage", errorMessage);
             argumentsOfScenario.Add("boardId", boardId);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add member with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 38
+#line 42
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -376,13 +376,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 39
+#line 43
 testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 40
+#line 44
 testRunner.When(string.Format("the user wants to add the member {0} to the board {1} with type {2}", username, boardId, memberType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 45
 testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -401,7 +401,7 @@ testRunner.Then(string.Format("a response with id {0} and message {1} shows", re
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
         public virtual void AddMemberWithInvalidElements_Variant0()
         {
-#line 38
+#line 42
 this.AddMemberWithInvalidElements("\"Mauricio\"", "400", "nonexisting2021", "admin", "\"member not found\"", "\"60358bb95b8996733ff8a580\"", ((string[])(null)));
 #line hidden
         }
@@ -418,7 +418,7 @@ this.AddMemberWithInvalidElements("\"Mauricio\"", "400", "nonexisting2021", "adm
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
         public virtual void AddMemberWithInvalidElements_Variant1()
         {
-#line 38
+#line 42
 this.AddMemberWithInvalidElements("\"Mauricio\"", "400", "omarandresnarvaezortega", "superadmin", "\"invalid value for type\"", "\"60358bb95b8996733ff8a580\"", ((string[])(null)));
 #line hidden
         }
@@ -435,7 +435,7 @@ this.AddMemberWithInvalidElements("\"Mauricio\"", "400", "omarandresnarvaezorteg
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
         public virtual void AddMemberWithInvalidElements_Variant2()
         {
-#line 38
+#line 42
 this.AddMemberWithInvalidElements("\"anonymous\"", "401", "silvanaperezrojas", "admin", "\"invalid key\"", "\"60358bb95b8996733ff8a580\"", ((string[])(null)));
 #line hidden
         }
@@ -452,7 +452,7 @@ this.AddMemberWithInvalidElements("\"anonymous\"", "401", "silvanaperezrojas", "
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358cc95b8996733ff8c580\"")]
         public virtual void AddMemberWithInvalidElements_Variant3()
         {
-#line 38
+#line 42
 this.AddMemberWithInvalidElements("\"Mauricio\"", "404", "silvanaperezrojas", "admin", "\"The requested resource was not found.\"", "\"60358cc95b8996733ff8c580\"", ((string[])(null)));
 #line hidden
         }
@@ -465,48 +465,6 @@ this.AddMemberWithInvalidElements("\"Mauricio\"", "404", "silvanaperezrojas", "a
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get the members of a board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 50
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 51
-testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 52
-testRunner.When("the user wants to get the members in the board \"60358bb95b8996733ff8a580\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 53
-testRunner.Then("the member \"silvanaperezrojas\" is part of the boards member list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        public virtual void GetMemberWithInvalidElements(string user, string boardId, string responseId, string errorMessage, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("user", user);
-            argumentsOfScenario.Add("boardId", boardId);
-            argumentsOfScenario.Add("responseId", responseId);
-            argumentsOfScenario.Add("errorMessage", errorMessage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get member with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 55
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -528,12 +486,54 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 56
-testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 57
-testRunner.When(string.Format("the user wants to get the members in the board \"{0}\"", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user wants to get the members in the board \"60358bb95b8996733ff8a580\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 58
+testRunner.Then("the member \"silvanaperezrojas\" is part of the boards member list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void GetMemberWithInvalidElements(string user, string boardId, string responseId, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get member with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 61
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 62
+testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 63
+testRunner.When(string.Format("the user wants to get the members in the board \"{0}\"", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 64
 testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -550,7 +550,7 @@ testRunner.Then(string.Format("a response with id {0} and message {1} shows", re
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"invalid id\"")]
         public virtual void GetMemberWithInvalidElements_Variant0()
         {
-#line 55
+#line 61
 this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a580aa", "400", "\"invalid id\"", ((string[])(null)));
 #line hidden
         }
@@ -565,7 +565,7 @@ this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a580aa", 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"unauthorized permission requested\"")]
         public virtual void GetMemberWithInvalidElements_Variant1()
         {
-#line 55
+#line 61
 this.GetMemberWithInvalidElements("\"anonymous\"", "60358bb95b8996733ff8a580", "401", "\"unauthorized permission requested\"", ((string[])(null)));
 #line hidden
         }
@@ -580,8 +580,231 @@ this.GetMemberWithInvalidElements("\"anonymous\"", "60358bb95b8996733ff8a580", "
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
         public virtual void GetMemberWithInvalidElements_Variant2()
         {
-#line 55
+#line 61
 this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a581", "404", "\"The requested resource was not found.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void DeleteABoard(string user, string boardId, string statusCode, string serverMessage, string statusCodeErrorMessage, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("statusCode", statusCode);
+            argumentsOfScenario.Add("ServerMessage", serverMessage);
+            argumentsOfScenario.Add("statusCodeErrorMessage", statusCodeErrorMessage);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a Board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 74
+testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 75
+testRunner.When(string.Format("the user wants to get the board \"{0}\"", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 76
+testRunner.And(string.Format("delete it with Id \"{0}\" and error message \"{1}\"", boardId, serverMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 77
+testRunner.Then(string.Format("the system should not show the board with id \"{0}\" anymore and Status code is {1}" +
+                            " and {2}", boardId, statusCodeErrorMessage, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Board: \"JQ\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"JQ\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"JQ\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce3750c7c104d4b477dd0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCode", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ServerMessage", "null")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCodeErrorMessage", "404")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
+        public virtual void DeleteABoard_JQ()
+        {
+#line 73
+this.DeleteABoard("\"JQ\"", "604ce3750c7c104d4b477dd0", "200", "null", "404", "\"The requested resource was not found.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Board: \"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce3750c7c104d4b477dd0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCode", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ServerMessage", "\"unauthorized permission requested\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCodeErrorMessage", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
+        public virtual void DeleteABoard_Anonymous()
+        {
+#line 73
+this.DeleteABoard("\"anonymous\"", "604ce3750c7c104d4b477dd0", "401", "\"unauthorized permission requested\"", "401", "\"The requested resource was not found.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void DeleteABoardAlreadyDeleted(string user, string boardId, string statusCode, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("statusCode", statusCode);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a Board already Deleted", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 85
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 86
+testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 87
+testRunner.When(string.Format("the user try to get the board \"{0}\" with error message {1}", boardId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 88
+testRunner.Then(string.Format("the board is already deleted and Status code is {0}", statusCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Board already Deleted: \"JQ\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"JQ\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"JQ\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce3750c7c104d4b477dd0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCode", "404")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
+        public virtual void DeleteABoardAlreadyDeleted_JQ()
+        {
+#line 85
+this.DeleteABoardAlreadyDeleted("\"JQ\"", "604ce3750c7c104d4b477dd0", "404", "\"The requested resource was not found.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Board already Deleted: \"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce3750c7c104d4b477dd0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCode", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"unauthorized permission requested\"")]
+        public virtual void DeleteABoardAlreadyDeleted_Anonymous()
+        {
+#line 85
+this.DeleteABoardAlreadyDeleted("\"anonymous\"", "604ce3750c7c104d4b477dd0", "401", "\"unauthorized permission requested\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void DeleteAPrivateBoard(string user, string boardId, string statusCode, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("statusCode", statusCode);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a Private Board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 96
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 97
+testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 98
+testRunner.When(string.Format("the user wants to get the private board \"{0}\"", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 99
+testRunner.Then(string.Format("the system should not let delete the private board and throw a Status code \"{0}\"", statusCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Private Board: \"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604aac8258824285539dbbea")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCode", "Unauthorized")]
+        public virtual void DeleteAPrivateBoard_Mauricio()
+        {
+#line 96
+this.DeleteAPrivateBoard("\"Mauricio\"", "604aac8258824285539dbbea", "Unauthorized", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Private Board: \"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604aac8258824285539dbbea")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statusCode", "401")]
+        public virtual void DeleteAPrivateBoard_Anonymous()
+        {
+#line 96
+this.DeleteAPrivateBoard("\"anonymous\"", "604aac8258824285539dbbea", "401", ((string[])(null)));
 #line hidden
         }
     }
