@@ -17,6 +17,10 @@ namespace TrelloProject.BDD
 		string token;
 		string userId;
 		string _boardId;
+		string _labelsId;
+		string _labelsColor;
+		string _labelsName;
+
 		Random rdm = new Random();
 
 		//API variables
@@ -28,7 +32,7 @@ namespace TrelloProject.BDD
 		string getBoards = "https://api.trello.com/1/boards/";
 		string getListOfBoards = "https://api.trello.com/1/members/";
 
-		[Given(@"the user ""(.*)""")]
+        [Given(@"the user ""(.*)""")]
 		public void GivenTheUser(string userName)
 		{
 			switch (userName)
@@ -37,6 +41,11 @@ namespace TrelloProject.BDD
 					key = "78faad10e6c2a1b55dd05729ab5fad4d";
 					token = "c1c25177a8ca251ae153cce02d8bb02969572f1412e9c7fb26d0e23d05ef192c";
 					userId = "marroyaveuser";
+					break;
+				case "Silvana":
+					key = "6db2bc5a0880e96440976fd9b770a030";
+					token = "371aada84a8a60edf434d721597de68de147cb0a414d63374e49d0f5f698da3b";
+					userId = "silvanaperezrojas";
 					break;
 				default:
 					key = "";
@@ -117,5 +126,157 @@ namespace TrelloProject.BDD
 			response.Content.Should().Be(errorMessage);
 		}
 
+		//-------------------//----------------------------------//--------------------------------//
+
+		[When(@"the user wants to update the (.*), (.*), (.*), (.*) and (.*) fields in the board ""(.*)""")]
+		public void WhenTheUserWantsToUpdateTheAndFieldsInTheBoard(string name, string desc, string permissionLevel, string selfJoin, string yellow, string boardId)
+		{
+		request = new RestRequest(getBoards + boardId);
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+			request.AddQueryParameter("name", name);
+			request.AddQueryParameter("desc", desc);
+			request.AddQueryParameter("prefs/permissionLevel", permissionLevel);
+			request.AddQueryParameter("prefs/selfJoin", selfJoin);
+			request.AddQueryParameter("labelNames/yellow", yellow);
+		response = client.Put(request);
+		}
+
+		[Then(@"the board fields are updated with new values")]
+		public void ThenTheBoardFieldsAreUpdatedWithNewValues()
+		{
+		response.StatusCode.Should().Be(200);
+			Board myBoard = Board.Deserialize(response);
+			myBoard.name.Should().Be("Don't Delete");
+			myBoard.desc.Should().Be("Update board");
+			myBoard.prefs.permissionLevel.Should().Be("private");
+			myBoard.prefs.selfJoin.Should().Equals(true);
+			myBoard.labelNames.yellow.Should().Be("TEST1");
+		}
+
+		[When(@"the user wants to send invalid values to (.*), (.*), (.*) and (.*) fields in the board ""(.*)""")]
+		public void WhenTheUserWantsToSendInvalidValuesToAndFieldsInTheBoard(string closed, string selfJoin, string cardCovers, string hideVotes, string boardId)
+		{
+		request = new RestRequest(getBoards + boardId);
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+			request.AddQueryParameter("closed", closed);
+			request.AddQueryParameter("prefs"+"/"+"selfJoin", selfJoin);
+			request.AddQueryParameter("prefs"+"/"+"cardCovers", cardCovers);
+			request.AddQueryParameter("prefs"+"/"+"hideVotes", hideVotes);
+		response = client.Put(request);
+		}
+
+		[Then(@"a response with id (.*) and a message (.*) is retrieved")]
+		public void ThenAResponseWithIdAndAMessageIsRetrieved(int responseId, string errorMessage)
+		{
+			response.StatusCode.Should().Be(responseId);
+			response.Content.Should().Be(errorMessage);
+
+		}
+
+
+		//-------------------------//----------------------------//-------------------------------------------//
+
+		[When(@"the user creates a label with (.*) and (.*) in the board ""(.*)""")]
+		public void WhenTheUserCreatesALabelWithAndInTheBoard(string name, string color, string boardId)
+		{
+		request = new RestRequest(getBoards + boardId + "/labels");
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+			request.AddQueryParameter("name", name);
+			request.AddQueryParameter("color", color);
+		response = client.Post(request);
+		}
+
+		[Then(@"the user should get a new label with (.*) and (.*) from the board ""(.*)""")]
+		public void ThenTheUserShouldGetANewLabelWithAndFromTheBoard(string name, string color, string boardId)
+		{
+			response.StatusCode.Should().Be(200); 
+			Labels mylabels = Labels.Deserialize(response);
+			mylabels.id.Should().NotBeNullOrEmpty();
+			mylabels.idBoard.Should().Be(boardId);
+			mylabels.name.Should().Be(name);
+			mylabels.color.Should().Be(color);
+
+		}
+
+		[When(@"the user creates a label with name ""(.*)"" color (.*) in the board (.*) with invalid values")]
+		public void WhenTheUserCreatesALabelWithNameColorInTheBoardWithInvalidValues(string name, string color, string boardId)
+		{
+		request = new RestRequest(getBoards + boardId + "/labels");
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+			request.AddQueryParameter("name", name);
+			request.AddQueryParameter("color", color);
+		response = client.Post(request);
+		}
+
+		//--------------------------------------//----------------------------------//-----------------------------//
+
+		[When(@"the user wants to get all the labels from the board ""(.*)""")]
+		public void WhenTheUserWantsToGetAllTheLabelsFromTheBoard(string boardId)
+		{
+		request = new RestRequest(getBoards + boardId + "/labels");
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+		response = client.Get(request);
+		}
+
+		[Then(@"all labels should be retrieved")]
+		public void ThenAllLabelsShouldBeRetrieved()
+		{
+		response.StatusCode.Should().Be(200);
+			List <LabelsList> mylabels = LabelsList.Deserialize(response);
+			for (int i = 0; i < mylabels.Count; i++)
+			{
+				Console.WriteLine(mylabels[i].id, mylabels[i].idBoard, mylabels[i].name, mylabels[i].color);
+			}
+		}
+
+		[When(@"the user wants to get some labels filetered by (.*) and (.*) from the board ""(.*)""")]
+		public void WhenTheUserWantsToGetSomeLabelsFileteredByAndFromTheBoard(string fields, string limit, string boardId)
+		{
+			request = new RestRequest(getBoards + boardId + "/labels");
+				request.AddHeader("Accept", "application/json");
+				request.AddQueryParameter("key", key);
+				request.AddQueryParameter("token", token);
+				request.AddQueryParameter("fields", fields);
+				request.AddQueryParameter("limit", limit);
+			response = client.Get(request);
+		}
+
+		[Then(@"only the filtered labels should be return in the response")]
+		public void ThenOnlyTheFilteredLabelsShouldBeReturnInTheResponse()
+		{
+			response.StatusCode.Should().Be(200);
+			List<LabelsList> mylabels = LabelsList.Deserialize(response);
+			for (int i = 0; i < mylabels.Count; i++)
+			{
+				Console.WriteLine(mylabels[i].id, mylabels[i].idBoard, mylabels[i].name, mylabels[i].color);
+			}
+		}
+
+		[When(@"the user wants to get a label with name ""(.*)"" and invalid data to boardId (.*), fields (.*) and limit (.*)")]
+		public void WhenTheUserWantsToGetALabelWithNameAndInvalidDataToBoardIdFieldsAndLimit(string name, string boardId, string fields, string limit)
+		{
+		request = new RestRequest(getBoards + boardId + "/labels");
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+			request.AddQueryParameter("name", name);
+			request.AddQueryParameter("fields", fields);
+			request.AddQueryParameter("limit", limit);
+		response = client.Post(request);
+
+		}
+
 	}
+
 }
+
