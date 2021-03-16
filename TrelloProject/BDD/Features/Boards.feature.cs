@@ -20,7 +20,7 @@ namespace TrelloProject.BDD.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class GetBoardsFeature
+    public partial class BoardsFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -48,7 +48,7 @@ namespace TrelloProject.BDD.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD/Features", "GetBoards", "\tGet the boards created by each user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD/Features", "Boards", "\tInteract with Trello boards ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,9 +63,9 @@ namespace TrelloProject.BDD.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "GetBoards")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Boards")))
             {
-                global::TrelloProject.BDD.Features.GetBoardsFeature.FeatureSetup(null);
+                global::TrelloProject.BDD.Features.BoardsFeature.FeatureSetup(null);
             }
         }
         
@@ -93,7 +93,7 @@ namespace TrelloProject.BDD.Features
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with id")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         public virtual void GetBoardWithId()
         {
@@ -125,10 +125,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
- testRunner.When("the user wants to get the board \"60358bb95b8996733ff8a580\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user wants to get the board \"604ce460ef515f36c3f2bb9a\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.Then("the board with \"60358bb95b8996733ff8a580\" is retrieved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the board with \"604ce460ef515f36c3f2bb9a\" is retrieved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -136,7 +136,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get a board from the user")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         public virtual void GetABoardFromTheUser()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -178,7 +178,14 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+<<<<<<< HEAD
         public virtual void GetBoardWithInvalidElements(string user, string boardId, string responseId, string errorMessage, string[] exampleTags)
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with anonymous user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        public virtual void GetBoardWithAnonymousUser()
+>>>>>>> Silvana
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -208,10 +215,17 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 17
+<<<<<<< HEAD
  testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 18
  testRunner.When(string.Format("the user wants to get the board {0}", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+=======
+ testRunner.Given("the user \"anonymous2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+ testRunner.When("the user wants to get the board \"604ce460ef515f36c3f2bb9a\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+>>>>>>> Silvana
 #line hidden
 #line 19
  testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -221,6 +235,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with invalid elements: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
@@ -229,6 +244,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "401")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"unauthorized permission requested\"")]
         public virtual void GetBoardWithInvalidElements_Variant0()
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with invalid id")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        public virtual void GetBoardWithInvalidId()
+>>>>>>> Silvana
         {
 #line 16
 this.GetBoardWithInvalidElements("\"anonymous\"", "\"60358bb95b8996733ff8a580\"", "401", "\"unauthorized permission requested\"", ((string[])(null)));
@@ -307,6 +327,7 @@ testRunner.Then(string.Format("the member \"{0}\" with type \"{1}\"  is part of 
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a member: jquser2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "jquser2")]
@@ -461,6 +482,11 @@ this.AddMemberWithInvalidElements("\"Mauricio\"", "404", "silvanaperezrojas", "a
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get the members of a board")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
         public virtual void GetTheMembersOfABoard()
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with non existing id")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        public virtual void GetBoardWithNonExistingId()
+>>>>>>> Silvana
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
@@ -488,16 +514,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 51
 testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+<<<<<<< HEAD
 #line 52
 testRunner.When("the user wants to get the members in the board \"60358bb95b8996733ff8a580\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 53
 testRunner.Then("the member \"silvanaperezrojas\" is part of the boards member list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+=======
+#line 28
+ testRunner.When("the user wants to get the board \"604ce460ef515f36c3f2bb92\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 29
+ testRunner.Then("a found error with text \"The requested resource was not found.\" shows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+>>>>>>> Silvana
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
+<<<<<<< HEAD
         public virtual void GetMemberWithInvalidElements(string user, string boardId, string responseId, string errorMessage, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -508,6 +543,18 @@ testRunner.Then("the member \"silvanaperezrojas\" is part of the boards member l
             argumentsOfScenario.Add("errorMessage", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get member with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 55
+=======
+        public virtual void SuccessfullyUpdateAnExistentBoard(string name, string desc, string prefsPermissionLevel, string prefsSelfJoin, string labelNamesYellow, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("name", name);
+            argumentsOfScenario.Add("desc", desc);
+            argumentsOfScenario.Add("prefs/permissionLevel", prefsPermissionLevel);
+            argumentsOfScenario.Add("prefs/selfJoin", prefsSelfJoin);
+            argumentsOfScenario.Add("labelNames/yellow", labelNamesYellow);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully update an existent board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -527,6 +574,69 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 35
+ testRunner.Given("the user \"Silvana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 36
+ testRunner.When(string.Format("the user wants to update the {0}, {1}, {2}, {3} and {4} fields in the board \"604c" +
+                            "e460ef515f36c3f2bb9a\"", name, desc, prefsPermissionLevel, prefsSelfJoin, labelNamesYellow), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 37
+ testRunner.Then("the board fields are updated with new values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successfully update an existent board: Don\'t Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Don\'t Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name", "Don\'t Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:desc", "Update board")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/permissionLevel", "private")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/selfJoin", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:labelNames/yellow", "TEST1")]
+        public virtual void SuccessfullyUpdateAnExistentBoard_DontDelete()
+        {
+#line 34
+this.SuccessfullyUpdateAnExistentBoard("Don\'t Delete", "Update board", "private", "true", "TEST1", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void BoardNotUpdatedWhenInvalidFieldsAreSent(string closed, string prefsSelfJoin, string prefsCardCovers, string prefsHideVotes, string responseId, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("closed", closed);
+            argumentsOfScenario.Add("prefs/selfJoin", prefsSelfJoin);
+            argumentsOfScenario.Add("prefs/cardCovers", prefsCardCovers);
+            argumentsOfScenario.Add("prefs/hideVotes", prefsHideVotes);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Board not updated when invalid fields are sent", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 44
+>>>>>>> Silvana
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+<<<<<<< HEAD
 #line 56
 testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -535,12 +645,24 @@ testRunner.When(string.Format("the user wants to get the members in the board \"
 #line hidden
 #line 58
 testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+=======
+#line 45
+ testRunner.Given("the user \"Silvana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 46
+ testRunner.When(string.Format("the user wants to send invalid values to {0}, {1}, {2} and {3} fields in the boar" +
+                            "d \"60358bb95b8996733ff8a580\"", closed, prefsSelfJoin, prefsCardCovers, prefsHideVotes), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+ testRunner.Then(string.Format("a response with id {0} and a message {1} is retrieved", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+>>>>>>> Silvana
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get member with invalid elements: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
@@ -552,10 +674,26 @@ testRunner.Then(string.Format("a response with id {0} and message {1} shows", re
         {
 #line 55
 this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a580aa", "400", "\"invalid id\"", ((string[])(null)));
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Board not updated when invalid fields are sent: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:closed", "\"test123\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/selfJoin", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/cardCovers", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/hideVotes", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid value for closed")]
+        public virtual void BoardNotUpdatedWhenInvalidFieldsAreSent_Variant0()
+        {
+#line 44
+this.BoardNotUpdatedWhenInvalidFieldsAreSent("\"test123\"", "true", "true", "true", "400", "invalid value for closed", ((string[])(null)));
+>>>>>>> Silvana
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get member with invalid elements: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
@@ -567,10 +705,201 @@ this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a580aa", 
         {
 #line 55
 this.GetMemberWithInvalidElements("\"anonymous\"", "60358bb95b8996733ff8a580", "401", "\"unauthorized permission requested\"", ((string[])(null)));
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Board not updated when invalid fields are sent: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:closed", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/selfJoin", "test123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/cardCovers", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/hideVotes", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid value for prefs/selfJoin")]
+        public virtual void BoardNotUpdatedWhenInvalidFieldsAreSent_Variant1()
+        {
+#line 44
+this.BoardNotUpdatedWhenInvalidFieldsAreSent("true", "test123", "true", "true", "400", "invalid value for prefs/selfJoin", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Board not updated when invalid fields are sent: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:closed", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/selfJoin", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/cardCovers", "test123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/hideVotes", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid value for prefs/cardCovers")]
+        public virtual void BoardNotUpdatedWhenInvalidFieldsAreSent_Variant2()
+        {
+#line 44
+this.BoardNotUpdatedWhenInvalidFieldsAreSent("false", "true", "test123", "false", "400", "invalid value for prefs/cardCovers", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Board not updated when invalid fields are sent: Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:closed", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/selfJoin", "false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/cardCovers", "true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:prefs/hideVotes", "test123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid value for prefs/hideVotes")]
+        public virtual void BoardNotUpdatedWhenInvalidFieldsAreSent_Variant3()
+        {
+#line 44
+this.BoardNotUpdatedWhenInvalidFieldsAreSent("true", "false", "true", "test123", "400", "invalid value for prefs/hideVotes", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void CreateALabelFromABoard(string name, string color, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("name", name);
+            argumentsOfScenario.Add("color", color);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a label from a board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 59
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 60
+ testRunner.Given("the user \"Silvana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 61
+ testRunner.When(string.Format("the user creates a label with {0} and {1} in the board \"604ce460ef515f36c3f2bb9a\"" +
+                            "", name, color), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 62
+ testRunner.Then(string.Format("the user should get a new label with {0} and {1} from the board \"604ce460ef515f36" +
+                            "c3f2bb9a\"", name, color), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label from a board: Label_123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Label_123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name", "Label_123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:color", "pink")]
+        public virtual void CreateALabelFromABoard_Label_123()
+        {
+#line 59
+this.CreateALabelFromABoard("Label_123", "pink", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label from a board: Test_1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Test_1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name", "Test_1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:color", "sky")]
+        public virtual void CreateALabelFromABoard_Test_1()
+        {
+#line 59
+this.CreateALabelFromABoard("Test_1", "sky", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label from a board: label_spr")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "label_spr")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name", "label_spr")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:color", "lime")]
+        public virtual void CreateALabelFromABoard_Label_Spr()
+        {
+#line 59
+this.CreateALabelFromABoard("label_spr", "lime", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void CreateALabelWithInvalidValues(string user, string boardId, string color, string responseId, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("color", color);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a label with invalid values", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 70
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 71
+ testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 72
+ testRunner.When(string.Format("the user creates a label with name \"test\" color {0} in the board {1} with invalid" +
+                            " values", color, boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 73
+ testRunner.Then(string.Format("a response with id {0} and a message {1} is retrieved", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label with invalid values: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymus\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce460ef515f36c3f2bb9a")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:color", "pink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid key")]
+        public virtual void CreateALabelWithInvalidValues_Variant0()
+        {
+#line 70
+this.CreateALabelWithInvalidValues("\"anonymus\"", "604ce460ef515f36c3f2bb9a", "pink", "401", "invalid key", ((string[])(null)));
+>>>>>>> Silvana
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get member with invalid elements: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
@@ -582,6 +911,236 @@ this.GetMemberWithInvalidElements("\"anonymous\"", "60358bb95b8996733ff8a580", "
         {
 #line 55
 this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a581", "404", "\"The requested resource was not found.\"", ((string[])(null)));
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label with invalid values: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Silvana\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "test123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:color", "red")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid id")]
+        public virtual void CreateALabelWithInvalidValues_Variant1()
+        {
+#line 70
+this.CreateALabelWithInvalidValues("\"Silvana\"", "test123", "red", "400", "invalid id", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label with invalid values: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Silvana\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce460ef515f36c3f2bb9a")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:color", "brown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "{\"message\":\"invalid value for color\",\"error\":\"ERROR\"}")]
+        public virtual void CreateALabelWithInvalidValues_Variant2()
+        {
+#line 70
+this.CreateALabelWithInvalidValues("\"Silvana\"", "604ce460ef515f36c3f2bb9a", "brown", "400", "{\"message\":\"invalid value for color\",\"error\":\"ERROR\"}", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get all labels from a board")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        public virtual void GetAllLabelsFromABoard()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get all labels from a board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 85
+ testRunner.Given("the user \"Silvana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 86
+ testRunner.When("the user wants to get all the labels from the board \"604ce460ef515f36c3f2bb9a\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 87
+ testRunner.Then("all labels should be retrieved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void GetLabelsFilteredFromTheBoard(string fields, string limit, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("fields", fields);
+            argumentsOfScenario.Add("limit", limit);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get labels filtered from the board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 90
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 91
+ testRunner.Given("the user \"Silvana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 92
+ testRunner.When(string.Format("the user wants to get some labels filetered by {0} and {1} from the board \"604ce4" +
+                            "60ef515f36c3f2bb9a\"", fields, limit), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 93
+ testRunner.Then("only the filtered labels should be return in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get labels filtered from the board: label")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "label")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fields", "label")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit", "1")]
+        public virtual void GetLabelsFilteredFromTheBoard_Label()
+        {
+#line 90
+this.GetLabelsFilteredFromTheBoard("label", "1", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get labels filtered from the board: name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fields", "name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit", "3")]
+        public virtual void GetLabelsFilteredFromTheBoard_Name()
+        {
+#line 90
+this.GetLabelsFilteredFromTheBoard("name", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get labels filtered from the board: color")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "color")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fields", "color")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit", "5")]
+        public virtual void GetLabelsFilteredFromTheBoard_Color()
+        {
+#line 90
+this.GetLabelsFilteredFromTheBoard("color", "5", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void GetLabelsWithInvalidData(string user, string boardId, string fields, string limit, string responseId, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("fields", fields);
+            argumentsOfScenario.Add("limit", limit);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get labels with invalid data", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 102
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 103
+ testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 104
+ testRunner.When(string.Format("the user wants to get a label with name \"test\" and invalid data to boardId {0}, f" +
+                            "ields {1} and limit {2}", boardId, fields, limit), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 105
+ testRunner.Then(string.Format("a response with id {0} and a message {1} is retrieved", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get labels with invalid data: \"anonymus\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"anonymus\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymus\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "604ce460ef515f36c3f2bb9a")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fields", "label")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid key")]
+        public virtual void GetLabelsWithInvalidData_Anonymus()
+        {
+#line 102
+this.GetLabelsWithInvalidData("\"anonymus\"", "604ce460ef515f36c3f2bb9a", "label", "3", "401", "invalid key", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get labels with invalid data: \"Silvana\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "\"Silvana\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Silvana\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "Test123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fields", "name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit", "5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "invalid id")]
+        public virtual void GetLabelsWithInvalidData_Silvana()
+        {
+#line 102
+this.GetLabelsWithInvalidData("\"Silvana\"", "Test123", "name", "5", "400", "invalid id", ((string[])(null)));
+>>>>>>> Silvana
 #line hidden
         }
     }
