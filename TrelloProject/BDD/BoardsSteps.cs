@@ -35,7 +35,6 @@ namespace TrelloProject.BDD
         [Given(@"the user ""(.*)""")]
 		public void GivenTheUser(string userName)
 		{
-			//Method to set the keys, tokens and usernames of the current users
 			switch (userName)
 			{
 				case "Mauricio":
@@ -56,22 +55,9 @@ namespace TrelloProject.BDD
 			}
 		}
 
-		[When(@"the user wants to add the member (.*) to the board ""(.*)"" with type (.*)")]
-		public void WhenTheUserWantsToAddTheMemberToTheBoardWithType(object userName, string boardId, string memberType)
-		{
-			//Set the request to add a member to the board
-			request = new RestRequest(getBoards + boardId + "/members/" + userName);
-			request.AddHeader("Accept", "application/json");
-			request.AddQueryParameter("key", key);
-			request.AddQueryParameter("token", token);
-			request.AddQueryParameter("type", memberType);
-			response = client.Put(request);
-		}
-
 		[When(@"the user wants to get the board ""(.*)""")]
 		public void WhenTheUserWantsToGetTheBoard(string boardId)
 		{
-			//Set the request to get a board
 			request = new RestRequest(getBoards + boardId);
 			request.AddHeader("Accept", "application/json");
 			request.AddQueryParameter("key", key);
@@ -82,7 +68,6 @@ namespace TrelloProject.BDD
 		[When(@"the user wants to get the owning boards")]
 		public void WhenTheUserWantsToGetTheOwningBoards()
 		{
-			//Set the request to get the boards of a user
 			request = new RestRequest(getListOfBoards + userId + "/boards");
 			request.AddHeader("Accept", "application/json");
 			request.AddQueryParameter("key", key);
@@ -93,24 +78,10 @@ namespace TrelloProject.BDD
 		[When(@"gets one of the boards")]
 		public void WhenGetsOneOfTheBoards()
 		{
-			//Get the boards of the user
 			List<BoardList> myBoards = BoardList.Deserialize(response);
-			//Get a random id from the list
 			_boardId = myBoards[rdm.Next(0, myBoards.Count - 1)].id;
 
-			//Set the request to get a random board
 			request = new RestRequest(getBoards + _boardId);
-			request.AddHeader("Accept", "application/json");
-			request.AddQueryParameter("key", key);
-			request.AddQueryParameter("token", token);
-			response = client.Get(request);
-		}
-
-		[When(@"the user wants to get the members in the board ""(.*)""")]
-		public void WhenTheUserWantsToGetTheMembersInTheBoard(string boardId)
-		{
-			//Set the request to get the members of a board
-			request = new RestRequest(getBoards + boardId + "/members/");
 			request.AddHeader("Accept", "application/json");
 			request.AddQueryParameter("key", key);
 			request.AddQueryParameter("token", token);
@@ -121,58 +92,40 @@ namespace TrelloProject.BDD
 		[Then(@"the board with ""(.*)"" is retrieved")]
 		public void ThenTheBoardWithIsRetrieved(string boardId)
 		{
-			//Check the response code
 			response.StatusCode.Should().Be(200);
-			//Get the boards
 			Board myBoard = Board.Deserialize(response);
-			//Check the id of the board
 			myBoard.id.Should().Be(boardId);
 		}
 
+		[Then(@"an unauthorized error with text ""(.*)"" shows")]
+		public void ThenAnUnauthorizedErrorWithTextShows(string errorMessage)
+		{
+			response.StatusCode.Should().Be(401);
+			response.Content.Should().Be(errorMessage);
+		}
+
+		[Then(@"a request error with text ""(.*)"" shows")]
+		public void ThenARequestErrorWithTextShows(string errorMessage)
+		{
+			response.StatusCode.Should().Be(400);
+			response.Content.Should().Be(errorMessage);
+		}
 
 		[Then(@"the board selected board is retrieved")]
 		public void ThenTheBoardSelectedBoardIsRetrieved()
 		{
-			//Check the response code
 			response.StatusCode.Should().Be(200);
-			//Get the boards
 			Board myBoard = Board.Deserialize(response);
-			//Check the id of the board
 			myBoard.id.Should().Be(_boardId);
 		}
 
-		[Then(@"a response with id (.*) and message ""(.*)"" shows")]
-		public void ThenAResponseWithIdAndMessageShows(int responseId, string errorMessage)
+		[Then(@"a found error with text ""(.*)"" shows")]
+		public void ThenAFoundErrorWithTextShows(string errorMessage)
 		{
-			//Check the status code from the response
-			response.StatusCode.Should().Be(responseId);
-			//Check the error message
+			response.StatusCode.Should().Be(404);
 			response.Content.Should().Be(errorMessage);
 		}
 
-<<<<<<< HEAD
-		[Then(@"the member ""(.*)"" with type ""(.*)""  is part of the board")]
-		public void ThenTheMemberWithTypeIsPartOfTheBoard(object user, object type)
-		{
-			bool result = false;
-			//Get the members and the memberships from the response
-			Member_Membership members = Member_Membership.Deserialize(response);
-			//Get the member with the selected user name
-			Member selectedMember = members.members.First(x => x.username.Equals(user.ToString()));
-			//Get the membership of the selected user name - Username and type should be equal
-			members.memberships.Should().Contain(x => x.memberType.Equals(type.ToString()) && x.idMember.Equals(selectedMember.id));
-		}
-
-		[Then(@"the member ""(.*)"" is part of the boards member list")]
-		public void ThenTheMemberIsPartOfTheBoardsMemberList(string userName)
-		{
-			//Check the response code
-			response.StatusCode.Should().Be(200);
-			//Get the members
-			List<Member> members = Member.Deserialize(response);
-			members.Should().Contain(x => x.username.Equals(userName));
-		}
-=======
 		//-------------------//----------------------------------//--------------------------------//
 
 		[When(@"the user wants to update the (.*), (.*), (.*), (.*) and (.*) fields in the board ""(.*)""")]
@@ -323,7 +276,6 @@ namespace TrelloProject.BDD
 
 		}
 
->>>>>>> Silvana
 	}
 
 }
