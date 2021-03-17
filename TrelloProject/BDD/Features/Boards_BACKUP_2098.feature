@@ -13,10 +13,17 @@ Scenario: Get a board from the user
 	And gets one of the boards
 	Then the board selected board is retrieved
 
+<<<<<<< HEAD
 Scenario Outline:  Get board with invalid elements
 	Given the user <user>
 	When the user wants to get the board <boardId>
 	Then a response with id <responseId> and message <errorMessage> shows
+=======
+Scenario: Get board with anonymous user
+	Given the user "anonymous2"
+	When the user wants to get the board "604ce460ef515f36c3f2bb9a"
+	Then an unauthorized error with text "unauthorized permission requested" shows
+>>>>>>> Silvana
 
 Examples: 
 | user        | boardId                    | responseId | errorMessage                            |
@@ -24,6 +31,7 @@ Examples:
 | "Mauricio"  | "1111111"                  | 400        | "invalid id"                            |
 | "Mauricio"  | "60358cc95b8996733ff8a580" | 404        | "The requested resource was not found." |
 
+<<<<<<< HEAD
 Scenario Outline: Add a member
 Given the user "Mauricio"
 When the user wants to add the member <username> to the board "60358bb95b8996733ff8a580" with type <memberType>
@@ -62,7 +70,11 @@ Examples:
 | "Mauricio"  | 60358bb95b8996733ff8a580aa | 400        | "invalid id"                            |
 | "anonymous" | 60358bb95b8996733ff8a580   | 401        | "unauthorized permission requested"     |
 | "Mauricio"  | 60358bb95b8996733ff8a581   | 404        | "The requested resource was not found." |
-
+=======
+Scenario: Get board with non existing id
+	Given the user "Mauricio"
+	When the user wants to get the board "604ce460ef515f36c3f2bb92"
+	Then a found error with text "The requested resource was not found." shows
 
 
 #Update Boards

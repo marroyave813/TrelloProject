@@ -178,14 +178,22 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+<<<<<<< HEAD
+        public virtual void GetBoardWithInvalidElements(string user, string boardId, string responseId, string errorMessage, string[] exampleTags)
+=======
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with anonymous user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         public virtual void GetBoardWithAnonymousUser()
+>>>>>>> Silvana
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get board with anonymous user", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get board with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -207,27 +215,84 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 17
+<<<<<<< HEAD
+ testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+ testRunner.When(string.Format("the user wants to get the board {0}", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+=======
  testRunner.Given("the user \"anonymous2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 18
  testRunner.When("the user wants to get the board \"604ce460ef515f36c3f2bb9a\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+>>>>>>> Silvana
 #line hidden
 #line 19
- testRunner.Then("an unauthorized error with text \"unauthorized permission requested\" shows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with invalid elements: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"unauthorized permission requested\"")]
+        public virtual void GetBoardWithInvalidElements_Variant0()
+=======
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with invalid id")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         public virtual void GetBoardWithInvalidId()
+>>>>>>> Silvana
         {
-            string[] tagsOfScenario = ((string[])(null));
+#line 16
+this.GetBoardWithInvalidElements("\"anonymous\"", "\"60358bb95b8996733ff8a580\"", "401", "\"unauthorized permission requested\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with invalid elements: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"1111111\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"invalid id\"")]
+        public virtual void GetBoardWithInvalidElements_Variant1()
+        {
+#line 16
+this.GetBoardWithInvalidElements("\"Mauricio\"", "\"1111111\"", "400", "\"invalid id\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with invalid elements: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358cc95b8996733ff8a580\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "404")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
+        public virtual void GetBoardWithInvalidElements_Variant2()
+        {
+#line 16
+this.GetBoardWithInvalidElements("\"Mauricio\"", "\"60358cc95b8996733ff8a580\"", "404", "\"The requested resource was not found.\"", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void AddAMember(string username, string memberType, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get board with invalid id", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+            argumentsOfScenario.Add("username", username);
+            argumentsOfScenario.Add("memberType", memberType);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a member", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -247,28 +312,72 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
- testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
- testRunner.When("the user wants to get the board \"1111111\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+testRunner.When(string.Format("the user wants to add the member {0} to the board \"60358bb95b8996733ff8a580\" with" +
+                            " type {1}", username, memberType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
- testRunner.Then("a request error with text \"invalid id\" shows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 30
+testRunner.Then(string.Format("the member \"{0}\" with type \"{1}\"  is part of the board", username, memberType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with non existing id")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
-        public virtual void GetBoardWithNonExistingId()
+<<<<<<< HEAD
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a member: jquser2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "jquser2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "jquser2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
+        public virtual void AddAMember_Jquser2()
         {
-            string[] tagsOfScenario = ((string[])(null));
+#line 27
+this.AddAMember("jquser2", "admin", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a member: omarandresnarvaezortega")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "omarandresnarvaezortega")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "omarandresnarvaezortega")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "normal")]
+        public virtual void AddAMember_Omarandresnarvaezortega()
+        {
+#line 27
+this.AddAMember("omarandresnarvaezortega", "normal", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add a member: silvanaperezrojas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "silvanaperezrojas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "silvanaperezrojas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
+        public virtual void AddAMember_Silvanaperezrojas()
+        {
+#line 27
+this.AddAMember("silvanaperezrojas", "admin", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void AddMemberWithInvalidElements(string user, string responseId, string username, string memberType, string errorMessage, string boardId, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get board with non existing id", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 26
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("username", username);
+            argumentsOfScenario.Add("memberType", memberType);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            argumentsOfScenario.Add("boardId", boardId);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add member with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -288,19 +397,153 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 27
- testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 39
+testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 40
+testRunner.When(string.Format("the user wants to add the member {0} to the board {1} with type {2}", username, boardId, memberType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add member with invalid elements: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "nonexisting2021")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"member not found\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
+        public virtual void AddMemberWithInvalidElements_Variant0()
+        {
+#line 38
+this.AddMemberWithInvalidElements("\"Mauricio\"", "400", "nonexisting2021", "admin", "\"member not found\"", "\"60358bb95b8996733ff8a580\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add member with invalid elements: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "omarandresnarvaezortega")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "superadmin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"invalid value for type\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
+        public virtual void AddMemberWithInvalidElements_Variant1()
+        {
+#line 38
+this.AddMemberWithInvalidElements("\"Mauricio\"", "400", "omarandresnarvaezortega", "superadmin", "\"invalid value for type\"", "\"60358bb95b8996733ff8a580\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add member with invalid elements: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "silvanaperezrojas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"invalid key\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358bb95b8996733ff8a580\"")]
+        public virtual void AddMemberWithInvalidElements_Variant2()
+        {
+#line 38
+this.AddMemberWithInvalidElements("\"anonymous\"", "401", "silvanaperezrojas", "admin", "\"invalid key\"", "\"60358bb95b8996733ff8a580\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add member with invalid elements: Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "404")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "silvanaperezrojas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:memberType", "admin")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "\"60358cc95b8996733ff8c580\"")]
+        public virtual void AddMemberWithInvalidElements_Variant3()
+        {
+#line 38
+this.AddMemberWithInvalidElements("\"Mauricio\"", "404", "silvanaperezrojas", "admin", "\"The requested resource was not found.\"", "\"60358cc95b8996733ff8c580\"", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get the members of a board")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        public virtual void GetTheMembersOfABoard()
+=======
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get board with non existing id")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
+        public virtual void GetBoardWithNonExistingId()
+>>>>>>> Silvana
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get the members of a board", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 50
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 51
+testRunner.Given("the user \"Mauricio\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+<<<<<<< HEAD
+#line 52
+testRunner.When("the user wants to get the members in the board \"60358bb95b8996733ff8a580\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 53
+testRunner.Then("the member \"silvanaperezrojas\" is part of the boards member list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+=======
 #line 28
  testRunner.When("the user wants to get the board \"604ce460ef515f36c3f2bb92\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 29
  testRunner.Then("a found error with text \"The requested resource was not found.\" shows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+>>>>>>> Silvana
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
+<<<<<<< HEAD
+        public virtual void GetMemberWithInvalidElements(string user, string boardId, string responseId, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("user", user);
+            argumentsOfScenario.Add("boardId", boardId);
+            argumentsOfScenario.Add("responseId", responseId);
+            argumentsOfScenario.Add("errorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get member with invalid elements", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 55
+=======
         public virtual void SuccessfullyUpdateAnExistentBoard(string name, string desc, string prefsPermissionLevel, string prefsSelfJoin, string labelNamesYellow, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -373,6 +616,7 @@ this.SuccessfullyUpdateAnExistentBoard("Don\'t Delete", "Update board", "private
             argumentsOfScenario.Add("errorMessage", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Board not updated when invalid fields are sent", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 44
+>>>>>>> Silvana
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -392,6 +636,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+<<<<<<< HEAD
+#line 56
+testRunner.Given(string.Format("the user {0}", user), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 57
+testRunner.When(string.Format("the user wants to get the members in the board \"{0}\"", boardId), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 58
+testRunner.Then(string.Format("a response with id {0} and message {1} shows", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+=======
 #line 45
  testRunner.Given("the user \"Silvana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -401,12 +655,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 47
  testRunner.Then(string.Format("a response with id {0} and a message {1} is retrieved", responseId, errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+>>>>>>> Silvana
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get member with invalid elements: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "60358bb95b8996733ff8a580aa")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"invalid id\"")]
+        public virtual void GetMemberWithInvalidElements_Variant0()
+        {
+#line 55
+this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a580aa", "400", "\"invalid id\"", ((string[])(null)));
+=======
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Board not updated when invalid fields are sent: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
@@ -420,10 +688,24 @@ this.ScenarioInitialize(scenarioInfo);
         {
 #line 44
 this.BoardNotUpdatedWhenInvalidFieldsAreSent("\"test123\"", "true", "true", "true", "400", "invalid value for closed", ((string[])(null)));
+>>>>>>> Silvana
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get member with invalid elements: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"anonymous\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "60358bb95b8996733ff8a580")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"unauthorized permission requested\"")]
+        public virtual void GetMemberWithInvalidElements_Variant1()
+        {
+#line 55
+this.GetMemberWithInvalidElements("\"anonymous\"", "60358bb95b8996733ff8a580", "401", "\"unauthorized permission requested\"", ((string[])(null)));
+=======
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Board not updated when invalid fields are sent: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
@@ -612,10 +894,24 @@ this.ScenarioInitialize(scenarioInfo);
         {
 #line 70
 this.CreateALabelWithInvalidValues("\"anonymus\"", "604ce460ef515f36c3f2bb9a", "pink", "401", "invalid key", ((string[])(null)));
+>>>>>>> Silvana
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+<<<<<<< HEAD
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get member with invalid elements: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "GetBoards")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:user", "\"Mauricio\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:boardId", "60358bb95b8996733ff8a581")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:responseId", "404")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:errorMessage", "\"The requested resource was not found.\"")]
+        public virtual void GetMemberWithInvalidElements_Variant2()
+        {
+#line 55
+this.GetMemberWithInvalidElements("\"Mauricio\"", "60358bb95b8996733ff8a581", "404", "\"The requested resource was not found.\"", ((string[])(null)));
+=======
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create a label with invalid values: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Boards")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
@@ -844,6 +1140,7 @@ this.GetLabelsWithInvalidData("\"anonymus\"", "604ce460ef515f36c3f2bb9a", "label
         {
 #line 102
 this.GetLabelsWithInvalidData("\"Silvana\"", "Test123", "name", "5", "400", "invalid id", ((string[])(null)));
+>>>>>>> Silvana
 #line hidden
         }
     }
