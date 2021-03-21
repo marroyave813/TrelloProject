@@ -342,6 +342,25 @@ namespace TrelloProject.BDD
 			response = client.Get(request);
 		}
 
+
+		[When(@"the user try to get the board ""(.*)"" with error message ""(.*)""")]
+		public void WhenTheUserTryToGetTheBoardWithErrorMessage(string boardId, string errorMesage)
+		{
+			//Set the request to get a board
+			request = new RestRequest(getBoards + boardId);
+			request.AddHeader("Accept", "application/json");
+			request.AddQueryParameter("key", key);
+			request.AddQueryParameter("token", token);
+			response = client.Get(request);
+			Assert.AreEqual(errorMesage, response.Content);
+
+			statusCode = response.StatusCode;
+			numericStatusCode = (int)statusCode;
+		}
+
+
+
+
 		[Then(@"only the filtered labels should be return in the response")]
 		public void ThenOnlyTheFilteredLabelsShouldBeReturnInTheResponse()
 		{
@@ -392,7 +411,6 @@ namespace TrelloProject.BDD
 
 
 
-
 		[Then(@"the board is already deleted and Status code is (.*)")]
 		public void ThenTheBoardIsAlreadyDeletedAndStatusCodeIs(int StatusCode)
 		{
@@ -402,6 +420,8 @@ namespace TrelloProject.BDD
 			}
 			Assert.IsTrue(result);
 		}
+
+
 
 
 		[Then(@"the system should not let delete the private board and throw a Status code ""(.*)""")]
