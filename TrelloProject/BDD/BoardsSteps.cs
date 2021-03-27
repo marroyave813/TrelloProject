@@ -435,6 +435,15 @@ namespace TrelloProject.BDD
 				Assert.IsTrue(result);
 			}
 		}
+
+		[Then(@"a response with id (.*) and message ""(.*)"" shows")]
+		public void ThenAResponseWithIdAndMessageShows(int responseId, string errorMessage)
+		{
+			//Check the status code from the response
+			response.StatusCode.Should().Be(responseId);
+			//Check the error message
+			response.Content.Should().Be(errorMessage);
+		}
 	}
 
 }
